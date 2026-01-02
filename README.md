@@ -25,7 +25,15 @@ python -m pip install flask flask_sqlalchemy
 
 ```
 python -m pip install livereload
-``` 
+```
+
+# Preview das Telas
+
+> * Orignal
+<img src="./preview/original.png" alt="" />
+
+> * Evoluido
+<img src="./preview/evoluido-1.png" alt="" />
 
 > * Link ref.:
 ```
