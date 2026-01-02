@@ -21,3 +21,5 @@ https://www.youtube.com/watch?v=Lq-gxt_P_kw
 ```
 https://www.youtube.com/watch?v=P23mTd4F5Hg&t=1011s
 ```
+
+<img src="./preview/validacao-e-rotas.png" alt="" />

@@ -35,6 +35,11 @@ python -m pip install livereload
 > * Evoluido
 <img src="./preview/evoluido-1.png" alt="" />
 
+<br />
+
+> * Rotas e validações.
+<img src="./preview/validacao-e-rotas.png" alt="" />
+
 > * Link ref.:
 ```
 https://www.youtube.com/watch?v=mWBNI1cS0jg
