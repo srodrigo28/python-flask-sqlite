@@ -1,45 +1,3 @@
-## Flask Todo Crud
-
-## Criando ativando
-
-> * Criando Venv
-```
-python -m venv venv
-```
-
-> * Ativando Venv
-```
-.\venv\Scripts\activate
-```
-
-
-### Dependências
-
-> * Flask
-> * Flask_SqlAlchemy
-
-## Instalação
-```
-python -m pip install flask flask_sqlalchemy
-```
-
-```
-python -m pip install livereload
-``` 
-
-> * Link ref.:
-```
-https://www.youtube.com/watch?v=mWBNI1cS0jg
-```
-
-## desistalar
-```
-pip uninstall flask-livereload
-```
-
-## Código Lindo e simples
-> * 05-1-exercicio.py
-```
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 
@@ -60,4 +18,3 @@ if __name__ == '__main__':
     with app.app_context():
         db.create_all()
     app.run(port=1313, debug=True) # Roda aplicação
-```

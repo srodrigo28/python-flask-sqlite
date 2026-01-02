@@ -1,0 +1,21 @@
+{# NO JINJA2 (FLASK), USAMOS ELSE DENTRO DO FOR PARA LISTA VAZIA #}
+{% for task in tasks %}
+<li
+    class="group cursor-pointer relative bg-dark/40 border border-gray-800 p-5 rounded-2xl flex items-center justify-between hover:border-primary/40 hover:bg-primary/[0.03] transition-all duration-500">
+    <div class="flex items-center gap-4">
+        <div class="w-1 h-8 bg-gray-800 rounded-full group-hover:bg-primary transition-colors"></div>
+        <div>
+            <p class="text-gray-200 font-semibold group-hover:text-white transition-colors">
+                {{ task.description }}
+            </p>
+        </div>
+    </div>
+    <i data-lucide="chevron-right" class="w-5 h-5 text-gray-700 group-hover:text-primary transition-colors"></i>
+</li>
+{% else %}
+{# ISSO É O EQUIVALENTE AO {% empty %} DO DJANGO #}
+<li class="text-center py-16 border-2 border-dashed border-gray-800/50 rounded-3xl">
+    <i data-lucide="layout-grid" class="w-12 h-12 text-gray-800 mx-auto mb-4"></i>
+    <p class="text-gray-600 italic">O log de missões está vazio.</p>
+</li>
+{% endfor %}

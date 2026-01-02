@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+{% include 'components/head.html' %}
+<body class="min-h-screen flex flex-col items-center p-4 md:p-10">
+    <div class="w-full max-w-2xl">
+        {% include 'components/form-title.html' %}
+        <main class="glass rounded-[2.5rem] p-6 md:p-8 shadow-2xl">
+            {% include 'components/form-status.html' %}
+            <ul class="space-y-4"> 
+                {% include 'components/form-list.html' %}
+            </ul>
+        </main>
+    </div>
+    <script> lucide.createIcons(); </script>
+</body>
+</html>

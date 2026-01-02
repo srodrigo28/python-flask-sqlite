@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programador Aventureiro - Missões</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7c3aed',
+                        dark: '#0f0f14',
+                        card: '#18181f'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #0f0f14; color: #e5e7eb; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background-color: #7c3aed; border-radius: 10px; }
+        .glass {
+            background: rgba(24, 24, 31, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center p-4 md:p-10">
+
+    <div class="w-full max-w-2xl">
+        
+        <header class="mb-10 text-center justify-center flex items-center gap-3">
+            <div class="inline-flex items-center justify-center p-3 bg-primary/10 rounded-2xl border border-primary/20 shadow-lg shadow-primary/5">
+                <i data-lucide="terminal" class="text-primary w-8 h-8"></i>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-2">
+                Programador <span class="text-primary italic">Aventureiro</span>
+            </h1>
+        </header>
+
+        <main class="glass rounded-[2.5rem] p-6 md:p-8 shadow-2xl">
+            <div class="flex items-center justify-between mb-8 px-2">
+                <h2 class="text-lg font-bold text-gray-300 flex items-center gap-2">
+                    <i data-lucide="list-todo" class="w-5 h-5 text-primary"></i>
+                    Tasks Atuais
+                </h2>
+                <span class="bg-primary/20 text-primary text-[16px] font-black 
+                    px-3 py-1 rounded-full uppercase">
+                    {{ tasks|length }} Disponíveis
+                </span>
+            </div>
+
+            <ul class="space-y-4">
+                {# NO JINJA2 (FLASK), USAMOS ELSE DENTRO DO FOR PARA LISTA VAZIA #}
+                {% for task in tasks %}
+                <li class="group cursor-pointer relative bg-dark/40 border border-gray-800 p-5 rounded-2xl flex items-center justify-between hover:border-primary/40 hover:bg-primary/[0.03] transition-all duration-500">
+                    <div class="flex items-center gap-4">
+                        <div class="w-1 h-8 bg-gray-800 rounded-full group-hover:bg-primary transition-colors"></div>
+                        <div>
+                            <p class="text-gray-200 font-semibold group-hover:text-white transition-colors">
+                                {{ task.description }}
+                            </p>
+                        </div>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-gray-700 group-hover:text-primary transition-colors"></i>
+                </li>
+                {% else %}
+                {# ISSO É O EQUIVALENTE AO {% empty %} DO DJANGO #}
+                <li class="text-center py-16 border-2 border-dashed border-gray-800/50 rounded-3xl">
+                    <i data-lucide="layout-grid" class="w-12 h-12 text-gray-800 mx-auto mb-4"></i>
+                    <p class="text-gray-600 italic">O log de missões está vazio.</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </main>
+    </div>
+    
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
