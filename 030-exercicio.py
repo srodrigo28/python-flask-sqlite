@@ -11,7 +11,7 @@ def index():
 if __name__ == '__main__':
     server = Server(app.wsgi_app)
     
-    # Observa mudanças nos arquivos
+    # Observa mudanças nos arquivos html e staticos
     server.watch('templates/**/*.html')  # templates HTML
     server.watch('static/**/*')          # CSS, JS, imagens etc.
     server.watch('*.py')                 # arquivos Python (reinicia o servidor)
