@@ -13,7 +13,7 @@ class Tasks(db.Model): # 2. Definição do modelo (tabela) de tarefas
 def index(): # Página inicial: lista todas as tarefas cadastradas.
     tasks = Tasks.query.all()
     
-    return render_template('index-especial-3.html', tasks=tasks) # Mapea o HTML
+    return render_template('index-especial-3.html', tasks=tasks) # repassa query do banco
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()

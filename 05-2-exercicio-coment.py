@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 
 # 4. Cria a instância do SQLAlchemy vinculada à aplicação Flask
-db = SQLAlchemy(app) 
+db = SQLAlchemy(app)
 
 class Tasks(db.Model): # 5. Definição do modelo (tabela) de tarefas
     id = db.Column(db.Integer, primary_key=True) # ID único autoincrementável
